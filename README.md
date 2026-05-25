@@ -2,7 +2,7 @@
 
 Bulk converter for Outlook `.msg` files to PDFs. Reads the MAPI binary format directly via `olefile` — no Outlook required.
 
-Built to automate the repetitive parts of preparing email exhibits for court filings, audit submissions, and document productions, but useful anywhere you have a folder of `.msg` files that need to become PDFs.
+Built to automate the repetitive parts of preparing email exhibits for court filings, audit submissions and document productions, but useful anywhere you have a folder of `.msg` files that need to become PDFs.
 
 **By using this tool, you consent to the [Disclaimer](#disclaimer).**
 
@@ -32,7 +32,7 @@ Also writes:
 - `olefile`: `py -m pip install olefile`
 - Microsoft Edge (any recent version) for PDF rendering. If Edge isn't found, falls back to saving each email as HTML.
 
-The PDF rendering uses headless Edge with `--disable-javascript` and `--disable-features=NetworkService`, plus an HTML sanitiser that strips script, iframe, and external resource references, so untrusted email content can be processed without executing it or phoning home.
+The PDF rendering uses headless Edge with `--disable-javascript` and `--disable-features=NetworkService`, plus an HTML sanitiser that strips script, iframe and external resource references, so untrusted email content can be processed without executing it or phoning home.
 
 ## Quickstart
 
@@ -55,7 +55,7 @@ The PDF rendering uses headless Edge with `--disable-javascript` and `--disable-
 The script defends against several known attack surfaces in untrusted email HTML:
 
 - Path traversal via crafted attachment filenames
-- HTML sanitisation strips scripts, iframes, event handlers, external resource fetches, protocol-relative URLs (Windows SMB hash leak vector), and Windows UNC paths
+- HTML sanitisation strips scripts, iframes, event handlers, external resource fetches, protocol-relative URLs (Windows SMB hash leak vector) and Windows UNC paths
 - Edge runs with JavaScript disabled and network service disabled
 - SHA-256 manifest provides cryptographic integrity verification of outputs (note: this does not by itself constitute a forensically defensible chain of custody — see Disclaimer)
 
